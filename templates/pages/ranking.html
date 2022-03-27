@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Ranking</h1>
+</div>
+<table class="table table-hover table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">Jogo</th>
+        <th scope="col">Time</th>
+        <th scope="col">Gol</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for x in jogo %}
+    <tr>
+        <td>{{ x.jogo }}</td>
+        <td>{{ x.time }}</td>
+        <td>{{ x.gol }}</td>
+    </tr>
+    </tbody>
+    {% endfor %}
+</table>
+<a href="{% url 'core:home' %}" class="text-center"><p class="h-6">Voltar a Home</p></a>
+
+{% endblock content %}

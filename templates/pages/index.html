@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Placar dos jogos</h1>
+</div>
+<table class="table table-hover table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">Jogo</th>
+        <th scope="col">Time</th>
+        <th scope="col">Gol</th>
+        <th scope="col">Local</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for x in campeonato %}
+    <tr>
+        <td>{{ x.jogo }}</td>
+        <td>{{ x.time }}</td>
+        <td>{{ x.gol }}</td>
+        <td>{{ x.jogo.local }}</td>
+    </tr>
+    </tbody>
+    {% endfor %}
+</table>
+<a href="{% url 'core:ranking' %}" class="text-center"><p class="h-6">Ver Ranking</p></a>
+{% endblock content %}
